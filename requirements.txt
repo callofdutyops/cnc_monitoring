@@ -1,1 +1,6 @@
 Django
+channels
+channels_redis
+asgiref
+kafka-python
+Twisted[tls,http2]

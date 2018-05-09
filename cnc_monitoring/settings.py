@@ -25,7 +25,7 @@ SECRET_KEY = 'oi9+ch74sg#7usv6p+hu7d2okq(ahicb6=5rqip@y8s%-5o2%#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app.apps.AppConfig',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -70,6 +71,15 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'cnc_monitoring.wsgi.application'
+ASGI_APPLICATION = 'cnc_monitoring.routing.application'
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('192.168.1.199', 6379)],
+        },
+    },
+}
 
 
 # Database
