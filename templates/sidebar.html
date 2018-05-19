@@ -1,0 +1,31 @@
+{% load static %}
+
+<div class="left_col scroll-view">
+    <div class="navbar nav_title" style="border: 0;">
+        <a href="{% url 'index' %}" class="site_title"><i class="fa fa-spinner"></i> <span>设备状态监控系统</span></a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <br/>
+
+    <!-- sidebar menu -->
+    <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+        <div class="menu_section">
+            <h3>General</h3>
+            <ul class="nav side-menu">
+                <li><a><i class="fa fa-home"></i> 监控主页 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="{% url 'index' %}">设备总览</a></li>
+                    </ul>
+                </li>
+                <li><a><i class="fa fa-desktop"></i> 生产报表 <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu">
+                        <li><a href="#">测试</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- /sidebar menu -->
+</div>

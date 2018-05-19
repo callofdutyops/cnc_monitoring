@@ -1,0 +1,47 @@
+{% extends 'base_site.html' %}
+
+{% load static %}
+
+{% block title %}总览信息{% endblock %}
+
+{% block stylesheets %}{{ block.super }}{% endblock %}
+
+{% block content %}
+    <div class="right_col" role="main">
+        <div class="row tile_count">
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-industry"></i> 设备总数 </span>
+                <div class="count">20 小时</div>
+                <span class="count_bottom"><i class="fa fa-sort-asc"></i><i class="green">4% </i> 自昨日</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-clock-o"></i> 工作时间</span>
+                <div class="count">15 小时</div>
+                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>3% </i> 自昨日</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-clock-o"></i> 切削时间</span>
+                <div class="count">8 小时</div>
+                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>34% </i> 自昨日</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-clock-o"></i> 工作效率</span>
+                <div class="count">60%</div>
+                <span class="count_bottom"><i class="green"><i class="fa fa-sort-asc"></i>12% </i> 自昨日</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-exclamation-triangle"></i> 报警数量</span>
+                <div class="count">0</div>
+                <span class="count_bottom"><i class="green"><i
+                        class="fa fa-sort-desc"></i>100% </i> 自昨日</span>
+            </div>
+            <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
+                <span class="count_top"><i class="fa fa-code"></i> 当前NC程序文件名</span>
+                <div class="count">1111</div>
+            </div>
+        </div>
+        {% for cnc in cncs %}
+            <a href="{% url 'details' cnc.pk %}">{{ cnc.cncName }}</a><br>
+        {% endfor %}
+    </div>
+{% endblock %}

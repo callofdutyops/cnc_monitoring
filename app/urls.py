@@ -1,7 +1,8 @@
-from django.urls import path, re_path
+from django.urls import path
 from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    re_path(r'^.*\.html', views.other_html, name='other_html')
+    path('overview', views.overview, name='overview'),
+    path('details/<int:pk>', views.details, name='details'),
 ]

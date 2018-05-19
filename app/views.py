@@ -1,9 +1,15 @@
 from django.shortcuts import render
+from .models import CNC
 
 
 def index(request):
-    return render(request, 'app/index.html', {})
+    cncs = CNC.objects.all()
+    return render(request, 'app/overview.html', {'cncs': cncs})
 
 
-def other_html(request):
-    return render(request, 'app/' + request.path.split('/')[-2], {})
+def details(request, pk):
+    return render(request, 'app/details.html', {'pk': pk})
+
+
+def overview(request):
+    return render(request, 'app/overview.html', {})
