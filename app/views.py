@@ -1,15 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+
 from .models import CNC
 
 
 def index(request):
-    cncs = CNC.objects.all()
-    return render(request, 'app/overview.html', {'cncs': cncs})
+    return redirect('overview')
 
 
 def details(request, pk):
-    return render(request, 'app/details.html', {'pk': pk})
+    cnc = CNC.objects.get(pk=pk)
+    return render(request, 'app/details.html', {'cnc': cnc})
 
 
 def overview(request):
-    return render(request, 'app/overview.html', {})
+    cncs = CNC.objects.all()
+    return render(request, 'app/overview.html', {'cncs': cncs})
