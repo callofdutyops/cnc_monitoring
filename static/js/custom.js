@@ -1177,6 +1177,7 @@ function init_charts() {
 
 
     // Line chart
+    //TODO the format of message need to reformat
 
     if ($('#xyzLineChart').length) {
 
