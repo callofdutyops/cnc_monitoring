@@ -15,7 +15,6 @@ html, body {
 }
 
 .nav-sm .container.body .col-md-3.left_col {
-    min-height: 100%;
     width: 70px;
     padding: 0;
     z-index: 9999;
@@ -241,7 +240,6 @@ html, body {
 }
 
 .nav-md .container.body .col-md-3.left_col {
-    min-height: 100%;
     width: 230px;
     padding: 0;
     position: absolute;
@@ -929,7 +927,7 @@ a:focus {
 footer {
     background: #fff;
     padding: 15px 20px;
-    display: block
+    display: block;
 }
 
 .nav-sm footer {

@@ -4,10 +4,11 @@
 
 {% block title %}总览信息{% endblock %}
 
-{% block stylesheets %}{{ block.super }}{% endblock %}
+{% block stylesheets %}{{ block.super }}{% endblock stylesheets %}
 
 {% block content %}
     <div class="right_col" role="main">
+        <!-- top tiles -->
         <div class="row tile_count">
             <div class="col-md-2 col-sm-4 col-xs-6 tile_stats_count">
                 <span class="count_top"><i class="fa fa-industry"></i> 设备总数 </span>
@@ -34,6 +35,7 @@
                 <div class="count">10</div>
             </div>
         </div>
+        <!-- /top tiles -->
 
         <div class="row">
             {% for cnc in cncs %}
@@ -66,5 +68,6 @@
                 </div>
             {% endfor %}
         </div>
+        <div class="clearfix"></div>
     </div>
-{% endblock %}
+{% endblock content %}

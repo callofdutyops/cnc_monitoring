@@ -2,11 +2,9 @@
 
 {% load static %}
 
-{% block title %} 设备详细信息 {% endblock title %}
+{% block title %}设备详细信息{% endblock title %}
 
-{% block stylesheets %}
-    {{ block.super }}
-{% endblock stylesheets %}
+{% block stylesheets %}{{ block.super }}{% endblock stylesheets %}
 
 {% block content %}
     <div class="right_col" role="main">
@@ -77,133 +75,130 @@
         </div>
         <!-- /second tiles -->
 
-
-        <div class="">
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>主轴负载
-                                <small>主轴负载实时更新线图</small>
-                            </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Settings 1</a>
-                                        </li>
-                                        <li><a href="#">Settings 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <canvas id="chart_plot_spindle_load"></canvas>
-                        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>主轴负载
+                            <small>主轴负载实时更新线图</small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
                     </div>
-                </div>
-
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>主轴速率
-                                <small>主轴速率实时更新线图</small>
-                            </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Settings 1</a>
-                                        </li>
-                                        <li><a href="#">Settings 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <canvas id="chart_plot_spindle_speed"></canvas>
-                        </div>
+                    <div class="x_content">
+                        <canvas id="chart_plot_spindle_load"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
-            <div class="row">
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>XYZ坐标
-                                <small>XYZ坐标实时更新线图</small>
-                            </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Settings 1</a>
-                                        </li>
-                                        <li><a href="#">Settings 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <canvas id="xyzLineChart"></canvas>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="col-md-6 col-sm-6 col-xs-12">
-                    <div class="x_panel">
-                        <div class="x_title">
-                            <h2>AC摆角
-                                <small>AC摆角实时更新线图</small>
-                            </h2>
-                            <ul class="nav navbar-right panel_toolbox">
-                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                                </li>
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-                                       aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                                    <ul class="dropdown-menu" role="menu">
-                                        <li><a href="#">Settings 1</a>
-                                        </li>
-                                        <li><a href="#">Settings 2</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a class="close-link"><i class="fa fa-close"></i></a>
-                                </li>
-                            </ul>
-                            <div class="clearfix"></div>
-                        </div>
-                        <div class="x_content">
-                            <canvas id="abcLineChart"></canvas>
-                        </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>主轴速率
+                            <small>主轴速率实时更新线图</small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <canvas id="chart_plot_spindle_speed"></canvas>
                     </div>
                 </div>
             </div>
-            <div class="clearfix"></div>
         </div>
+        <div class="clearfix"></div>
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>XYZ坐标
+                            <small>XYZ坐标实时更新线图</small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <canvas id="xyzLineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>AC摆角
+                            <small>AC摆角实时更新线图</small>
+                        </h2>
+                        <ul class="nav navbar-right panel_toolbox">
+                            <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Settings 1</a>
+                                    </li>
+                                    <li><a href="#">Settings 2</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="close-link"><i class="fa fa-close"></i></a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+                        <canvas id="abcLineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </div>
 {% endblock content %}
 
