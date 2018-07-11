@@ -47,8 +47,13 @@
                             </a>
                             <div class="left col-xs-6 text-center">
                                 <a href="{% url 'details' cnc.pk %}">
-                                    <img src="{% static 'images/cnc_placeholder.png' %}" alt="CNC image"
-                                         class="img-responsive">
+                                    {% if cnc.pk == 2 %}
+                                        <img src="{% static 'images/abb_placeholder.jpg' %}" alt="CNC image"
+                                             class="img-responsive">
+                                    {% else %}
+                                        <img src="{% static 'images/cnc_placeholder.png' %}" alt="CNC image"
+                                             class="img-responsive">
+                                    {% endif %}
                                 </a>
                             </div>
                             <div class="right col-xs-6">

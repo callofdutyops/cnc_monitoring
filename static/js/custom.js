@@ -1226,12 +1226,22 @@ function init_charts() {
         chatSocket.addEventListener("message", function (e) {
             var data = JSON.parse(e.data);
             var message = JSON.parse(data['message']);
-            xyzLineChartDataX.push(message['attributes'][0]['value']);
-            xyzLineChartDataX.shift();
-            xyzLineChartDataY.push(message['attributes'][1]['value']);
-            xyzLineChartDataY.shift();
-            xyzLineChartDataZ.push(message['attributes'][2]['value']);
-            xyzLineChartDataZ.shift();
+            if (message['Name'].startsWith("HNC")) {
+                xyzLineChartDataX.push(parseFloat(message['PositionInfo']['Ax_1'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataX.shift();
+                xyzLineChartDataY.push(parseFloat(message['PositionInfo']['Ax_2'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataY.shift();
+                xyzLineChartDataZ.push(parseFloat(message['PositionInfo']['Ax_3'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataZ.shift();
+            }else if (message['Name'].startsWith("1200")) {
+                xyzLineChartDataX.push(parseFloat(message['PositionInfo']['Rax_1'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataX.shift();
+                xyzLineChartDataY.push(parseFloat(message['PositionInfo']['Rax_2'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataY.shift();
+                xyzLineChartDataZ.push(parseFloat(message['PositionInfo']['Rax_3'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataZ.shift();
+            }
+
             xyzLineChart.update();
         });
     }
@@ -1272,10 +1282,17 @@ function init_charts() {
         chatSocket.addEventListener("message", function (e) {
             var data = JSON.parse(e.data);
             var message = JSON.parse(data['message']);
-            abcLineChartDataA.push(message['attributes'][3]['value']);
-            abcLineChartDataA.shift();
-            abcLineChartDataC.push(message['attributes'][4]['value']);
-            abcLineChartDataC.shift();
+            if (message['Name'].startsWith("HNC")) {
+                xyzLineChartDataX.push(parseFloat(message['PositionInfo']['Ax_4'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataX.shift();
+                xyzLineChartDataY.push(parseFloat(message['PositionInfo']['Ax_5'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataY.shift();
+            }else if (message['Name'].startsWith("1200")) {
+                xyzLineChartDataX.push(parseFloat(message['PositionInfo']['Rax_4'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataX.shift();
+                xyzLineChartDataY.push(parseFloat(message['PositionInfo']['Rax_5'].split(":")[1].split(" ")[0]));
+                xyzLineChartDataY.shift();
+            }
             abcLineChart.update();
         });
     }
