@@ -13,7 +13,7 @@ data from Kafka.
     [cnc-data-simulator](https://github.com/callofdutyops/cnc-data-simulator)
 2. Clone the project
     ```bash
-    $ git clone https://github.com/callofdutyops/cnc-monitoring.git && cd cnc-monitoring
+    $ git clone https://github.com/callofdutyops/cnc_monitoring.git && cd cnc_monitoring
     ```
 3. Install all the necessary libs (recommand doing this in a virtual env)
     ```bash
@@ -21,7 +21,6 @@ data from Kafka.
     ```
 4. Run and Play!
     ```bash
-    $ cd gentellella
     $ python manage.py runserver 
     ```
     Then go to [http://localhost:8000/](http://localhost:8000/) or the URL you
